@@ -12,7 +12,7 @@
 
 [X] Documents Features in README
 
-[ ] Check Solution for (modern) standards
+[X] Check Solution for (modern) standards
 
 [X] Remove console logs
 
