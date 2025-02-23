@@ -4,92 +4,91 @@ document.addEventListener("DOMContentLoaded", function () {
     const slides = document.querySelectorAll(".slide");
     const prevButton = document.querySelector(".prev");
     const nextButton = document.querySelector(".next");
+    const paginationContainer = document.querySelector(".pagination");
 
-    if (!slider || slides.length === 0 || !slideContainer) {
-        console.error("Slider, slides, or container not found!");
+    if (!slider || slides.length === 0 || !slideContainer || !paginationContainer) {
+        console.error("Slider, slides, container, or pagination not found!");
         return;
     }
 
     let currentIndex = 0;
     let isDown = false;
     let startX, scrollLeft;
+    const totalSlides = slides.length;
+
+    // Create Pagination Dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        if (index === 0) dot.classList.add("active");
+        dot.dataset.index = index;
+        dot.addEventListener("click", () => goToSlide(index));
+        paginationContainer.appendChild(dot);
+    });
 
     function updateSliderPosition() {
         const slideWidth = slides[0].offsetWidth;
         const containerWidth = slideContainer.offsetWidth;
-        const maxScroll = slider.scrollWidth - containerWidth; // Max scroll distance
+        const maxScroll = slider.scrollWidth - containerWidth;
 
         let translateX = -(currentIndex * slideWidth);
-
-        // Ensure we don't overscroll past the last slide
-        if (-translateX > maxScroll) {
-            translateX = -maxScroll;
-        }
+        if (-translateX > maxScroll) translateX = -maxScroll;
 
         slider.style.transition = "transform 0.6s ease-in-out";
         slider.style.transform = `translateX(${translateX}px)`;
 
         updateButtons();
+        updatePagination();
     }
 
     function updateButtons() {
-        const slideWidth = slides[0].offsetWidth;
-        const containerWidth = slideContainer.offsetWidth;
-        const maxScroll = slider.scrollWidth - containerWidth;
-
         prevButton.disabled = currentIndex === 0;
-        nextButton.disabled = Math.abs(currentIndex * slideWidth) >= maxScroll;
+        nextButton.disabled = currentIndex === totalSlides - 1;
+    }
+
+    function updatePagination() {
+        document.querySelectorAll(".dot").forEach((dot, index) => {
+            dot.classList.toggle("active", index === currentIndex);
+        });
+    }
+
+    function goToSlide(index) {
+        if (index < 0 || index >= totalSlides) return;
+        currentIndex = index;
+        updateSliderPosition();
     }
 
     function moveSlide(direction) {
-        const slideWidth = slides[0].offsetWidth;
-        const containerWidth = slideContainer.offsetWidth;
-        const maxScroll = slider.scrollWidth - containerWidth;
-
-        if (direction === "next" && Math.abs(currentIndex * slideWidth) < maxScroll) {
+        if (direction === "next" && currentIndex < totalSlides - 1) {
             currentIndex++;
         } else if (direction === "prev" && currentIndex > 0) {
             currentIndex--;
         }
-
         updateSliderPosition();
     }
 
     prevButton.addEventListener("click", () => moveSlide("prev"));
     nextButton.addEventListener("click", () => moveSlide("next"));
 
-    // Mouse Scroll Event (Wheel)
+    // Mouse Scroll (Wheel)
     slider.addEventListener("wheel", (event) => {
         event.preventDefault();
-
-        const slideWidth = slides[0].offsetWidth;
-        const containerWidth = slideContainer.offsetWidth;
-        const maxScroll = slider.scrollWidth - containerWidth;
-
-        if (event.deltaY > 0 && Math.abs(currentIndex * slideWidth) < maxScroll) {
-            moveSlide("next");
-        } else if (event.deltaY < 0 && currentIndex > 0) {
-            moveSlide("prev");
-        }
+        event.deltaY > 0 ? moveSlide("next") : moveSlide("prev");
     });
 
-    // Touch Swipe Event (Mobile)
+    // Touch Swipe (Mobile)
     let touchStartX = 0;
-
     slider.addEventListener("touchstart", (event) => {
         touchStartX = event.touches[0].clientX;
     });
 
     slider.addEventListener("touchend", (event) => {
         let touchEndX = event.changedTouches[0].clientX;
-        if (touchStartX - touchEndX > 50) {
-            moveSlide("next");
-        } else if (touchEndX - touchStartX > 50) {
-            moveSlide("prev");
-        }
+        if (touchStartX - touchEndX > 50) moveSlide("next");
+        else if (touchEndX - touchStartX > 50) moveSlide("prev");
     });
 
-    // Mouse Dragging
+    // Mouse Drag
     slider.addEventListener("mousedown", (e) => {
         isDown = true;
         startX = e.pageX;
@@ -113,18 +112,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!isDown) return;
         const x = e.pageX;
         const walk = (x - startX) / 5;
-
-        const slideWidth = slides[0].offsetWidth;
-        const containerWidth = slideContainer.offsetWidth;
-        const maxScroll = slider.scrollWidth - containerWidth;
-
-        if (walk > 20 && currentIndex > 0) {
-            moveSlide("prev");
-            isDown = false;
-        } else if (walk < -20 && Math.abs(currentIndex * slideWidth) < maxScroll) {
-            moveSlide("next");
-            isDown = false;
-        }
+        if (walk > 20) moveSlide("prev");
+        else if (walk < -20) moveSlide("next");
+        isDown = false;
     });
 
     updateSliderPosition();
