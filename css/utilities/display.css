@@ -14,4 +14,8 @@
     .d-lg-flex {
         display: flex !important;
     }
+
+    .d-lg-none {
+        display: none !important;
+    }
 }

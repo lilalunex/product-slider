@@ -50,6 +50,15 @@
     margin-bottom: .25rem;
 }
 
+.py-3 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.pt-3 {
+    padding-top: 1rem;
+}
+
 @media (min-width: 768px) {
     .px-md-1 {
         padding-left: var(--px-1);
