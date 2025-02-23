@@ -42,8 +42,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function updateButtons() {
+        const containerWidth = slideContainer.offsetWidth;
+        const maxScrollLeft = slider.scrollWidth - containerWidth;
+
         prevButton.disabled = currentIndex === 0;
-        nextButton.disabled = currentIndex === totalSlides - 1;
+        nextButton.disabled = currentIndex >= totalSlides - Math.floor(containerWidth / slides[0].offsetWidth);
     }
 
     function updatePagination() {
