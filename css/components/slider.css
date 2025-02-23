@@ -91,8 +91,8 @@
     }
 
     .product-slider .slider-container .slides .slide {
-        height: 458px;
-        width: 288px;
+        min-height: 458px;
+        min-width: 288px;
     }
 
     .product-slider .slider-container img {
