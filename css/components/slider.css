@@ -11,7 +11,6 @@
 .product-slider .slider-container .slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    overflow: hidden;
 }
 
 .product-slider .slider-container .slides .slide {
