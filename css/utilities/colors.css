@@ -1,7 +1,15 @@
-:root {
-    --bg-grey-light: #eef2f5;
+.bg-grey-light {
+    background-color: var(--grey-light);
 }
 
-.bg-grey-light {
-    background-color: var(--bg-grey-light);
+.text-grey-medium {
+    color: var(--grey-medium);
+}
+
+.text-grey-dark {
+    color: var(--grey-dark);
+}
+
+.text-error-red {
+    color: var(--error-red);
 }

@@ -1,0 +1,9 @@
+:root {
+    --px-1: 1.25rem;
+    --px-2: 1.5rem;
+    --px-3: 3rem;
+    --grey-light: #eef2f5;
+    --grey-medium: #c8c8c8;
+    --grey-dark: #848C8C;
+    --error-red: #db1420;
+}

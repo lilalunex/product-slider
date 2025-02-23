@@ -1,3 +1,6 @@
+/* priority imports */
+@import url("base/variables.css");
+
 /* base */
 @import url("base/base.css");
 @import url("base/fonts.css");
@@ -12,5 +15,6 @@
 
 /* utilities */
 @import url("utilities/colors.css");
+@import url("utilities/display.css");
 @import url("utilities/spacing.css");
 @import url("utilities/text.css");

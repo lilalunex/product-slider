@@ -11,13 +11,14 @@
 .product-slider .slider-container .slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    gap: var(--px-1);
 }
 
 .product-slider .slider-container .slides .slide {
     box-sizing: border-box;
-    padding-right: var(--px-2);
     min-height: 340px;
     min-width: 184px;
+    background-color: white;
 }
 
 .product-slider .slider-container .pagination {
@@ -55,6 +56,12 @@
 .product-slider .slider-container .slide-reviews {
     display: flex;
     gap: 4px;
+    align-items: center;
+}
+
+.product-slider .slider-container .slide-price {
+    display: flex;
+    align-items: end;
 }
 
 @media (min-width: 360px) {
@@ -64,8 +71,11 @@
 }
 
 @media (min-width: 768px) {
+    .product-slider .slider-container .slides {
+        gap: var(--px-2);
+    }
+
     .product-slider .slider-container .slides .slide {
         flex: 0 0 27.5%;
-        padding-right: var(--px-2);
     }
 }

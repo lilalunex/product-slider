@@ -5,3 +5,7 @@
 .text-uppercase {
     text-transform: uppercase;
 }
+
+.text-strikethrough {
+    text-decoration: line-through;
+}
