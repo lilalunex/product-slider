@@ -6,9 +6,9 @@
 ## TODO
 [X] Complete Task
 
-[ ] Add Links
+[X] Add Links
 
-[ ] Check working with other images
+[X] Check working with other images
 
 [X] Documents Features in README
 

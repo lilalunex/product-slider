@@ -105,7 +105,8 @@
     }
 
     .product-slider .slider-container img {
-        max-height: 240px;
+        min-height: 240px;
+        object-fit: contain;
     }
 
     .product-slider .slider-container .slide-description {
