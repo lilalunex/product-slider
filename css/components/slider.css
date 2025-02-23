@@ -16,8 +16,8 @@
 
 .product-slider .slider-container .slides .slide {
     box-sizing: border-box;
-    min-height: 340px;
-    min-width: 184px;
+    height: 340px;
+    width: 184px;
     background-color: white;
 }
 
@@ -64,6 +64,15 @@
     align-items: end;
 }
 
+.product-slider .slider-container .slide-description {
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-width: 250px;
+}
+
 @media (min-width: 360px) {
     .product-slider .slider-container .slides .slide {
         flex: 0 0 70%;
@@ -72,10 +81,18 @@
 
 @media (min-width: 768px) {
     .product-slider .slider-container .slides {
-        gap: var(--px-2);
+        gap: var(--px-3);
     }
 
     .product-slider .slider-container .slides .slide {
-        flex: 0 0 27.5%;
+        min-height: 340px;
+        min-width: 184px;
+    }
+}
+
+
+@media (min-width: 1440px) {
+    .product-slider .slider-container .slides {
+        gap: var(--px-2);
     }
 }
