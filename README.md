@@ -6,6 +6,10 @@
 ## TODO
 [ ] Complete Task
 
+[ ] Add Links
+
+[ ] Check working with other images
+
 [X] Documents Features in README
 
 [ ] Check Solution for (modern) standards
