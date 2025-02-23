@@ -1,0 +1,6 @@
+/* base */
+@import url("base/base.css");
+@import url("base/reset.css");
+
+/* components */
+@import url("components/slider.css");
