@@ -95,4 +95,13 @@
     .product-slider .slider-container .slides {
         gap: var(--px-2);
     }
+
+    .product-slider .slider-container .slide-description {
+        display: block;
+        -webkit-line-clamp: unset;
+        line-clamp: unset;
+        -webkit-box-orient: unset;
+        max-width: unset;
+        overflow: visible;
+    }
 }
