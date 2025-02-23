@@ -1,0 +1,7 @@
+:root {
+    --bg-grey-light: #eef2f5;
+}
+
+.bg-grey-light {
+    background-color: var(--bg-grey-light);
+}

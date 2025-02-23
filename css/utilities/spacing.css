@@ -1,0 +1,54 @@
+:root {
+    --px-1: 1.25rem;
+    --px-2: 1.5rem;
+    --px-3: 3rem;
+}
+
+.px-1 {
+    padding-left: var(--px-1);
+    padding-right: var(--px-1);
+}
+
+.px-2 {
+    padding-left: var(--px-2);
+    padding-right: var(--px-2);
+}
+
+.px-3 {
+    padding-left: var(--px-3);
+    padding-right: var(--px-3);
+}
+
+@media (min-width: 768px) {
+    .px-md-1 {
+        padding-left: var(--px-1);
+        padding-right: var(--px-1);
+    }
+
+    .px-md-2 {
+        padding-left: var(--px-2);
+        padding-right: var(--px-2);
+    }
+
+    .px-md-3 {
+        padding-left: var(--px-3);
+        padding-right: var(--px-3);
+    }
+}
+
+@media (min-width: 1440px) {
+    .px-lg-1 {
+        padding-left: var(--px-1);
+        padding-right: var(--px-1);
+    }
+
+    .px-lg-2 {
+        padding-left: var(--px-2);
+        padding-right: var(--px-2);
+    }
+
+    .px-lg-3 {
+        padding-left: var(--px-3);
+        padding-right: var(--px-3);
+    }
+}

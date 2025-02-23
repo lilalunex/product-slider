@@ -1,6 +1,15 @@
 /* base */
 @import url("base/base.css");
 @import url("base/reset.css");
+@import url("base/typography.css");
 
 /* components */
 @import url("components/slider.css");
+
+/* layout */
+@import url("layout/container.css");
+
+/* utilities */
+@import url("utilities/colors.css");
+@import url("utilities/spacing.css");
+@import url("utilities/text.css");
