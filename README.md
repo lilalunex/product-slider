@@ -14,6 +14,8 @@
 
 [ ] Check Solution for (modern) standards
 
+[ ] Remove console logs
+
 ### Features
 
 - Scrollable mobile, with mouse whel & drag and drop
