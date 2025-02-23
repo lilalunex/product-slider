@@ -1,13 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
     const slider = document.querySelector(".slides");
-    const slideContainer = document.querySelector(".slider-container"); // Parent container
+    const slideContainer = document.querySelector(".slider-container");
     const slides = document.querySelectorAll(".slide");
     const prevButton = document.querySelector(".prev");
     const nextButton = document.querySelector(".next");
     const paginationContainer = document.querySelector(".pagination");
 
     if (!slider || slides.length === 0 || !slideContainer || !paginationContainer) {
-        console.error("Slider, slides, container, or pagination not found!");
         return;
     }
 
@@ -16,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let startX, scrollLeft;
     const totalSlides = slides.length;
 
-    // Create Pagination Dots
     slides.forEach((_, index) => {
         const dot = document.createElement("span");
         dot.classList.add("dot");
@@ -43,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateButtons() {
         const containerWidth = slideContainer.offsetWidth;
-        const maxScrollLeft = slider.scrollWidth - containerWidth;
 
         prevButton.disabled = currentIndex === 0;
         nextButton.disabled = currentIndex >= totalSlides - Math.floor(containerWidth / slides[0].offsetWidth);

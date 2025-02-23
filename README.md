@@ -14,7 +14,7 @@
 
 [ ] Check Solution for (modern) standards
 
-[ ] Remove console logs
+[X] Remove console logs
 
 ### Features
 
