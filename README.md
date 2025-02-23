@@ -6,6 +6,10 @@
 ## TODO
 [ ] Complete Task
 
-[ ] Documents Features in README
+[X] Documents Features in README
 
 [ ] Check Solution for (modern) standards
+
+### Features
+
+- Scrollable mobile, with mouse whel & drag and drop
