@@ -77,6 +77,15 @@
     max-height: 160px;
 }
 
+.product-slider .slider-container .slider-header .prev,
+.product-slider .slider-container .slider-header .next {
+    width: 48px;
+    height: 48px;
+    background-color: white;
+    border: 2px solid var(--blue);
+    cursor: pointer;
+}
+
 @media (min-width: 360px) {}
 
 @media (min-width: 768px) {
