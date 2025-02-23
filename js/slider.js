@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Slide index out of bounds:", currentIndex);
             return;
         }
-        slider.style.transition = "transform 0.3s ease-in-out"; // Smooth transition
+        slider.style.transition = "transform 0.6s ease-in-out"; // Smooth transition
         slider.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
